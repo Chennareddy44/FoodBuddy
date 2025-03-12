@@ -1,0 +1,23 @@
+{
+  "name": "foodbuddy",
+  "version": "1.0.0",
+  "description": "Customized Food Delivery Application",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "author": "Chenna Reddy",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
