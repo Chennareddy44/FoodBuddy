@@ -3,7 +3,7 @@ const Title = () => (
     <img
       className="logo"
       alt="logo"
-      src="https://i.ytimg.com/vi/QoP5SUrs23w/maxresdefault.jpg"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR27IuFnOSegUNusrDJA3xJFDJ9haLasFSnvw&s"
     ></img>
   </a>
 );
