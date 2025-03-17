@@ -79,18 +79,16 @@ body {
     }
 }
 
-/* Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 25px;
-    /* Reduced the height */
-    background: rgba(255, 255, 255, 0.9);
+    /* background: rgba(255, 255, 255, 0.9); */
+    background: rgba(237, 123, 123, 0.9);
     border-bottom: 2px solid rgba(255, 42, 42, 0.4);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     position: relative;
-    /* Removed sticky position */
     z-index: 999;
     transition: all 0.3s ease;
 }
@@ -107,10 +105,8 @@ body {
 
 .nav-items>ul>li {
     padding: 8px 16px;
-    /* Reduced padding for smaller size */
     font-weight: 700;
     font-size: 15px;
-    /* Reduced font size */
     color: #333;
     background: linear-gradient(135deg, #ff2a2a, #ff8080);
     border-radius: 12px;
@@ -168,9 +164,8 @@ body {
 }
 
 .logo {
-    height: 40px;
-    /* Reduced logo size */
-    width: 40px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -182,7 +177,6 @@ body {
     box-shadow: 0 0 40px rgba(255, 42, 42, 0.5);
 }
 
-/* Search Styles */
 .search-input {
     display: flex;
     justify-content: flex-start;
@@ -194,7 +188,6 @@ body {
 
 .search-input input {
     width: 220px;
-    /* Slightly smaller width */
     padding: 10px 16px;
     font-size: 14px;
     border: 2px solid rgba(255, 42, 42, 0.4);
@@ -216,7 +209,7 @@ body {
 
 .search-button {
     background: linear-gradient(135deg, #ff2a2a, #ff1a1a);
-    padding: 8px 15px;
+    padding: 11px 15px;
     border: none;
     border-radius: 12px;
     font-size: 14px;
@@ -233,7 +226,6 @@ body {
     box-shadow: 0 6px 18px rgba(255, 42, 42, 0.3);
 }
 
-/* Card Styles */
 .card {
     width: 100%;
     max-width: 270px;
@@ -260,6 +252,7 @@ body {
 }
 
 .card:hover {
+    cursor: pointer;
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(44, 62, 80, 0.15);
 }
@@ -311,7 +304,6 @@ body {
     flex-grow: 1;
 }
 
-/* Button Styles */
 .button {
     background: linear-gradient(135deg, #ff2a2a, #ff1a1a);
     color: white;
@@ -331,7 +323,37 @@ body {
     box-shadow: 0 6px 18px rgba(255, 42, 42, 0.3);
 }
 
-/* Responsive Design */
+.shimmer-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.shimmer-cards {
+    width: 250px;
+    height: 300px;
+    /* background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); */
+    background: linear-gradient(90deg, #edd1d1 25%, #f1caca 50%, #f4d2d2 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .restaurant-list {
         grid-template-columns: repeat(3, 1fr);
@@ -381,5 +403,19 @@ body {
     .search-button {
         width: 100%;
         padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .shimmer-cards {
+        width: 200px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shimmer-cards {
+        width: 150px;
+        height: 200px;
     }
 }
