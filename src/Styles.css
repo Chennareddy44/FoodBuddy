@@ -84,7 +84,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 12px 25px;
-    /* background: rgba(255, 255, 255, 0.9); */
     background: rgba(237, 123, 123, 0.9);
     border-bottom: 2px solid rgba(255, 42, 42, 0.4);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -104,7 +103,10 @@ body {
 }
 
 .nav-items>ul>li {
-    padding: 8px 16px;
+    padding: 6px 10px;
+}
+
+.nav-items>ul>li>a {
     font-weight: 700;
     font-size: 15px;
     color: #333;
@@ -114,9 +116,12 @@ body {
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    padding: inherit;
 }
 
-.nav-items>ul>li::before {
+.nav-items>ul>li>a::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -129,16 +134,16 @@ body {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.nav-items>ul>li:hover {
+.nav-items>ul>li>a:hover {
     color: white;
     transform: scale(1.1);
 }
 
-.nav-items>ul>li:hover::before {
+.nav-items>ul>li>a:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.nav-items>ul>li:hover::after {
+.nav-items>ul>li>a:hover::after {
     content: '✨';
     position: absolute;
     top: 50%;

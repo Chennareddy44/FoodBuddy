@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./Styles.css";
 import Header from "./Header";
@@ -7,7 +7,11 @@ import About from "./About";
 import Contact from "./Contact";
 import ErrorPage from "./ErrorPage";
 import RestaurantMenu from "./RestaurantMenu";
+import Goal from "./Goal";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+// import Cart from "./Cart";
+const Cart = lazy(() => import("./Cart"));
 
 const App = () => {
   return (
@@ -30,12 +34,33 @@ const appRouter = createBrowserRouter(
           element: <Body />,
         },
         {
-          path: "/Aboutus",
+          path: "/About",
           element: <About />,
+          children: [
+            {
+              path: "Goal",
+              element: <Goal />,
+            },
+          ],
         },
         {
-          path: "/Contactus",
+          path: "/Contact",
           element: <Contact />,
+        },
+        {
+          path: "/Cart",
+          element: (
+            <Suspense
+              fallback={
+                <h1>
+                  Dana is asking you to buy some ppv or he gonna oil you up
+                  Bwahahahaaa...
+                </h1>
+              }
+            >
+              <Cart />,
+            </Suspense>
+          ),
         },
         {
           path: "/restaurant/:resId",
