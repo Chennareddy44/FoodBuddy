@@ -1,52 +1,6 @@
-/* * {
-    padding: 0;
-    border: 0;
-}
+@import "tailwindcss";
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    border: 1px solid black;
-}
-
-.nav-items>ul {
-    display: flex;
-    list-style: none;
-}
-
-.nav-items>ul>li {
-    padding: 10px;
-}
-
-.logo {
-    height: 80px;
-    width: 80px;
-}
-
-.card {
-    width: 200px;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-}
-
-.card>img {
-    width: 100%;
-}
-
-.restaurant-list {
-    display: flex;
-    flex-wrap: wrap;
-} */
-
-
-
-
-
-
-
-
+/* 
 * {
     padding: 0;
     margin: 0;
@@ -340,7 +294,7 @@ body {
 .shimmer-cards {
     width: 250px;
     height: 300px;
-    /* background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); */
+    /* background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); 
     background: linear-gradient(90deg, #edd1d1 25%, #f1caca 50%, #f4d2d2 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite linear;
@@ -353,7 +307,7 @@ body {
     0% {
         background-position: -200% 0;
     }
-
+    
     100% {
         background-position: 200% 0;
     }
@@ -498,7 +452,7 @@ body {
     0% {
         background-position: -200px 0;
     }
-
+    
     100% {
         background-position: 200px 0;
     }
@@ -516,24 +470,24 @@ body {
         flex-direction: column;
         padding: 10px 15px;
     }
-
+    
     .nav-items>ul {
         margin-top: 10px;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
-
+    
     .search-input {
         flex-direction: column;
         align-items: center;
         padding: 10px 15px;
     }
-
+    
     .search-input input {
         margin-bottom: 10px;
     }
-
+    
     .restaurant-list {
         grid-template-columns: repeat(2, 1fr);
         padding: 15px;
@@ -544,11 +498,11 @@ body {
     .restaurant-list {
         grid-template-columns: 1fr;
     }
-
+    
     .card {
         max-width: 100%;
     }
-
+    
     .button,
     .search-button {
         width: 100%;
@@ -569,3 +523,5 @@ body {
         height: 200px;
     }
 }
+
+*/
