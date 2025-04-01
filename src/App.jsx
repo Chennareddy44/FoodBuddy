@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./Styles.css";
 import Header from "./Header";
@@ -7,18 +7,25 @@ import About from "./About";
 import Contact from "./Contact";
 import ErrorPage from "./ErrorPage";
 import RestaurantMenu from "./RestaurantMenu";
+import Instamart from "./Instamart";
 import Goal from "./Goal";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import userContext from "../utils/userContext";
 
 // import Cart from "./Cart";
 const Cart = lazy(() => import("./Cart"));
 
 const App = () => {
+  const [user, setUser] = useState({
+    name: "Jon Jones",
+    email: "DuckDuck@ufc.com",
+  });
+
   return (
-    <>
+    <userContext.Provider value={{ user: user, setUser: setUser }}>
       <Header />
       <Outlet />
-    </>
+    </userContext.Provider>
   );
 };
 
@@ -46,6 +53,10 @@ const appRouter = createBrowserRouter(
         {
           path: "/Contact",
           element: <Contact />,
+        },
+        {
+          path: "/Instamart",
+          element: <Instamart />,
         },
         {
           path: "/Cart",

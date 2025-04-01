@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Shimmer from "./Shimmer";
 import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useRestaurants from "../utils/useRestaurants";
+import userContext from "../utils/userContext";
 
 const Body = () => {
   const [allRestaurants, filteredRestaurants, setFilteredRestaurants] =
     useRestaurants([]);
   const [searchInput, setSearchInput] = useState("");
+  const { user, setUser } = useContext(userContext);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -34,6 +36,16 @@ const Body = () => {
               >
                 Search
               </button>
+              <input
+                className="border-2"
+                value={user.name}
+                onChange={(e) =>
+                  setUser({
+                    ...user,
+                    name: e.target.value,
+                  })
+                }
+              ></input>
             </div>
           </div>
 

@@ -1,73 +1,3 @@
-// import { useParams } from "react-router";
-// import Shimmer from "./Shimmer";
-// import { IMG_CDN_URL } from "./Constants";
-// import useRestaurant from "../utils/useRestaurant";
-
-// const RestaurantMenu = () => {
-//   const { resId } = useParams();
-//   const restaurantData = useRestaurant(resId);
-
-//   if (restaurantData === null) return <Shimmer />;
-
-//   const {
-//     name,
-//     city,
-//     areaName,
-//     avgRating,
-//     costForTwoMessage,
-//     cloudinaryImageId,
-//   } = restaurantData?.data?.cards[2]?.card?.card.info;
-
-//   const menuItems =
-//     restaurantData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
-//       ?.card?.card.itemCards;
-
-//   if (!menuItems || menuItems.length === 0) {
-//     return (
-//       <div>
-//         <h1>No menu items available</h1>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="menu">
-//       <div className="bg-red-200 flex justify-between">
-//         <h2 className="text-black font-extrabold py-13">{name}</h2>
-//         <img
-//           className="w-30"
-//           src={IMG_CDN_URL + cloudinaryImageId}
-//           alt="restaurant-logo"
-//         />
-//         <h3 className="text-black font-extrabold py-13">{city}</h3>
-//         <h3 className="text-black font-extrabold py-13">{areaName}</h3>
-//         <h3 className="text-black font-extrabold py-13">{avgRating} stars</h3>
-//         <h3 className="text-black font-extrabold py-13">{costForTwoMessage}</h3>
-//       </div>
-//       <div className="menu-items">
-//         <h1>Menu</h1>
-//         <ul className="grid grid-cols-5">
-//           {menuItems.map((item) => (
-//             <li key={item?.card?.info?.id}>
-//               <img
-//                 className="w-40"
-//                 src={IMG_CDN_URL + item?.card?.info?.imageId}
-//                 alt="Food Item Image"
-//               />
-//               <div>
-//                 <p>{item?.card?.info?.name}</p>
-//                 <p>Rs {item?.card.info.price / 100}</p>
-//               </div>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default RestaurantMenu;
-
 import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
 import { IMG_CDN_URL } from "./Constants";
@@ -104,7 +34,6 @@ const RestaurantMenu = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      {/* Restaurant Info */}
       <div className="max-w-4xl mx-auto bg-red-200 rounded-xl shadow-lg p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-gray-800">{name}</h2>

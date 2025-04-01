@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import userContext from "../utils/userContext";
 
 const Title = () => (
   <Link to="/">
@@ -15,6 +16,7 @@ const Title = () => (
 const Header = () => {
   const [isLoggedIn, setLoggedIn] = useState(true);
   const isOnline = useOnline();
+  const { user } = useContext(userContext);
 
   return (
     <div className="flex justify-between bg-red-300 shadow-2xl">
@@ -33,7 +35,13 @@ const Header = () => {
           <Link to="/Contact">Contact</Link>
         </li>
         <li className="m-2 px-5 bg-red-400 rounded-xl p-1 text-black cursor-pointer font-bold">
+          <Link to="/Instamart">Instamart</Link>
+        </li>
+        <li className="m-2 px-5 bg-red-400 rounded-xl p-1 text-black cursor-pointer font-bold">
           <Link to="/Cart">Cart</Link>
+        </li>
+        <li className="m-2 px-5 bg-red-400 rounded-xl p-1 text-black cursor-pointer font-bold">
+          {user.name} - {user.email}
         </li>
         {isLoggedIn ? (
           <button
