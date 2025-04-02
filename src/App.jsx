@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./Styles.css";
 import Header from "./Header";
@@ -16,13 +16,24 @@ import userContext from "../utils/userContext";
 const Cart = lazy(() => import("./Cart"));
 
 const App = () => {
-  const [user, setUser] = useState({
-    name: "Jon Jones",
-    email: "DuckDuck@ufc.com",
-  });
+  const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [
+    {
+      name: "F**k it Friday Special",
+      imageId: "https://i.redd.it/pji3ft64b0k71.jpg",
+      price: "79.99",
+    },
+  ];
+
+  const [cartItems, setCartItems] = useState(storedCartItems);
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
 
   return (
-    <userContext.Provider value={{ user: user, setUser: setUser }}>
+    <userContext.Provider value={{ cartItems, setCartItems }}>
       <Header />
       <Outlet />
     </userContext.Provider>

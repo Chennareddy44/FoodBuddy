@@ -1,16 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useRestaurants from "../utils/useRestaurants";
-import userContext from "../utils/userContext";
 
 const Body = () => {
   const [allRestaurants, filteredRestaurants, setFilteredRestaurants] =
     useRestaurants([]);
   const [searchInput, setSearchInput] = useState("");
-  const { user, setUser } = useContext(userContext);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -32,20 +30,10 @@ const Body = () => {
                   const data = filterData(searchInput, allRestaurants);
                   setFilteredRestaurants(data);
                 }}
-                className="bg-red-400 text-white font-semibold px-6 py-3 rounded-xl hover:bg-red-500 active:bg-red-600 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
+                className="bg-red-500 text-white font-bold px-6 py-3 rounded-xl hover:bg-red-500 active:bg-red-600 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
               >
                 Search
               </button>
-              <input
-                className="border-2"
-                value={user.name}
-                onChange={(e) =>
-                  setUser({
-                    ...user,
-                    name: e.target.value,
-                  })
-                }
-              ></input>
             </div>
           </div>
 
