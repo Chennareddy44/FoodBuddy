@@ -21,10 +21,6 @@ const Header = () => {
       <Title />
 
       <div className="flex gap-3">
-        <button className="px-3 py-1 font-bold text-white bg-gray-800 rounded-md shadow-md transition-all duration-300 hover:bg-gray-900 active:scale-95 cursor-pointer">
-          {isOnline ? "✅ Online" : "🔴 Offline"}
-        </button>
-
         {[
           { path: "/", label: "Home" },
           { path: "/About", label: "About" },
@@ -38,6 +34,10 @@ const Header = () => {
             </button>
           </Link>
         ))}
+
+        <button className="px-3 py-1 font-bold text-white bg-gray-800 rounded-md shadow-md transition-all duration-300 hover:bg-gray-900 active:scale-95">
+          {isOnline ? "✅ Online" : "🔴 Offline"}
+        </button>
 
         <button
           onClick={() => setLoggedIn(!isLoggedIn)}

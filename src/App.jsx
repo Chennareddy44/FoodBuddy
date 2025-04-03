@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./Styles.css";
 import Header from "./Header";
 import Body from "./Body";
+import Footer from "./Footer";
 import About from "./About";
 import Contact from "./Contact";
 import ErrorPage from "./ErrorPage";
@@ -36,6 +37,7 @@ const App = () => {
     <userContext.Provider value={{ cartItems, setCartItems }}>
       <Header />
       <Outlet />
+      <Footer />
     </userContext.Provider>
   );
 };
